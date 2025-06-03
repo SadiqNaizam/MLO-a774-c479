@@ -1,14 +1,23 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from 'react';
+import MainAppLayout from '../components/layout/MainAppLayout';
+import TreeView from '../components/TreeView/TreeView';
 
-const Index = () => {
+/**
+ * IndexPage serves as the main entry point for the "Tree View Manager" feature.
+ * It utilizes the MainAppLayout to provide the standard page structure (sidebar, header)
+ * and renders the TreeView component as its primary content.
+ *
+ * The TreeView component is self-contained, managing its own data (including initial dummy data)
+ * and state (such as open nodes, selections, and search terms).
+ * This page component focuses solely on composing the layout and the main feature component.
+ */
+const IndexPage: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <MainAppLayout>
+      {/* The TreeView component handles the display and interaction with the hierarchical data */}
+      <TreeView />
+    </MainAppLayout>
   );
 };
 
-export default Index;
+export default IndexPage;
